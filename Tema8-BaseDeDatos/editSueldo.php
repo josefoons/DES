@@ -1,6 +1,6 @@
 <html>
     <body>
-<?php
+        <?php
             $servidor = "localhost"; 
             $username = "miusuario";
             $password = "mipassword";
@@ -13,16 +13,19 @@
             }
             echo "Conexi&oacuten con &eacutexito <br><br>";
            
-            $consulta = "SELECT * FROM clientes";
+            $consulta = "SELECT * FROM clientes2";
           
             $result = mysqli_query($conn, $consulta);
            
             while ($fila = mysqli_fetch_array($result)) {
                 
-                $colocar = "UPDATE clientes2 SET sueldo = 10000";
-                //$colocar = "INSERT INTO clientes2 (ID, nombre, sueldo) VALUES ('$fila[0]', '$fila[1]', 10000);";
+                $aumento = ($fila[2] + ($fila[2] * 10)/100);
+                
+                
+                $colocar = "UPDATE clientes2 SET sueldo = $aumento";
                 $inserccion = mysqli_query($conn, $colocar);
 
+               
             }
            
             mysqli_free_result($result);
