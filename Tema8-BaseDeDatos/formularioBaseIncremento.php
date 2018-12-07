@@ -4,8 +4,7 @@
        
  
            
-            if ( !isset ( $_GET["boton"] ) )
-            {
+            if ( !isset ( $_GET["boton"] ) ) {
         ?>   
    
         <form action="formularioBaseIncremento.php" method="get">
@@ -39,7 +38,7 @@
                 if (!$conn) {
                     die("Conexi&ocacuten fallida: " . mysqli_connect_error());
                 }
-                echo "Conexi&oacuten con &eacutexito <br><br>";
+                
                 
                 $cons = "SELECT id FROM clientes3 ORDER BY id DESC LIMIT 1;";
                 $result = mysqli_query($conn, $cons);
@@ -54,8 +53,6 @@
                     $inserccion = mysqli_query($conn, $colocar);
                 }
                 
-
-               
             }
        
         ?>
